@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg" style="background-color: lightgreen;">
+    <a class="navbar-brand logoNav" href="#">
+        <img alt="Logo" src="/Images/logopt.jpg" style="max-width:65%;" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            <li>
+                <a class="nav-link textNavbar"routerLink="/">
+                    <i class="fa-solid fa-house" ></i>Trang chủ
+                </a>
+            </li>
+            <li>
+                <a class="nav-link textNavbar" routerLink="/danh-sách-sản-phẩm">
+                    <i class="fa-solid fa-laptop"></i>Laptop mới
+                </a>
+            </li>
+            <li>
+                <a class="nav-link textNavbar"routerLink="/sản-phẩm">
+                    <i class="fas fa-truck"></i>Tra cứu đơn hàng
+                </a>
+            </li>
+            
+            <form asp-controller="ProductDetail" asp-action="ShowListProductDetail" method="get" class="d-flex" style="margin:auto">
+                <input class="form-control me-2" name="searchString" style="width:280px" type="search" placeholder="Bạn muốn tìm sản phẩm gì?" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+           
+        </ul>
+    </div>
+</nav>
