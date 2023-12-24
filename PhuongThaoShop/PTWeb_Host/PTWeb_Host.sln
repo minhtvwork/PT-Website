@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTWeb_Api", "PTWeb_Api\PTWeb_Api.csproj", "{81B48875-CEC3-4A0C-AD6E-C072448E77FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PTWeb_Api", "PTWeb_Api\PTWeb_Api.csproj", "{81B48875-CEC3-4A0C-AD6E-C072448E77FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTWeb_Models", "PTWeb_Models\PTWeb_Models.csproj", "{83AC8039-84C9-4CC2-BFCD-3D8DB1AF4300}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{81B48875-CEC3-4A0C-AD6E-C072448E77FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81B48875-CEC3-4A0C-AD6E-C072448E77FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81B48875-CEC3-4A0C-AD6E-C072448E77FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83AC8039-84C9-4CC2-BFCD-3D8DB1AF4300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83AC8039-84C9-4CC2-BFCD-3D8DB1AF4300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83AC8039-84C9-4CC2-BFCD-3D8DB1AF4300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83AC8039-84C9-4CC2-BFCD-3D8DB1AF4300}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
