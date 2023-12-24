@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-md-3 col-sm-3" *ngFor="let p of products">
+        <mat-card class="example-card">
+            <!-- <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Shiba Inu</mat-card-title>
+                <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="{{p.linkImage}}"
+                alt="Photo of a Shiba Inu"> -->
+            <mat-card-content>
+                <p>
+                   {{p.nameProduct}}
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
