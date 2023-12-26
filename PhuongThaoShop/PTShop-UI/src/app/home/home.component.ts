@@ -1,7 +1,6 @@
-import { Component,OnInit } from '@angular/core';
-import { ProductService } from '../service/product.service';
-import { ProductDetailDto } from 'src/app/models/models';
-
+import { Component, OnInit } from '@angular/core';
+import { ProductDetailDto } from '../models/models';
+import { ApiService } from '../app.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -10,20 +9,20 @@ import { ProductDetailDto } from 'src/app/models/models';
 export class HomeComponent implements OnInit {
   products: ProductDetailDto[] = [];
 
-  constructor(private productService: ProductService) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.loadProducts();
   }
 
   loadProducts(): void {
-    this.productService.getProducts().subscribe(
+    this.apiService.getProducts().subscribe(
       (data: ProductDetailDto[]) => {
         this.products = data;
         console.log(this.products)
       },
       (error) => {
-        console.error('Error fetching products:', error);
+        console.error('Error', error);
       }
     );
   }

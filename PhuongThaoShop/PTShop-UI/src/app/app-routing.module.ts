@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SignInComponent}  from './main/admin/sign-in/sign-in.component'
-import { DashboardHomeComponent } from './main/dashboard/dashboard-home/dashboard-home.component';
+import { HomeComponent } from './home/home.component';
+import { CartComponent } from './cart/cart.component';
+import { ListProductComponent } from './list-product/list-product.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 const routes: Routes = [
-  // {path:'',component: HomeComponent},
-  // { path: 'danh-sách-sản-phẩm', component: ListProductsComponent },
-  // { path: 'sản-phẩm', component: ProductComponent },
-  // { path: 'admin', loadChildren: () => import('./main/admin/admin.module').then(m => m.AdminModule) },
-  { path: 'admin', component: SignInComponent },
-  { path: 'dashboard', loadChildren: () => import('./main/dashboard/dashboard.module').then(m => m.DashboardModule) },
-  { path: '', component: DashboardHomeComponent, pathMatch: 'full' },
+ {path:'',component: HomeComponent},
+ {path:'sản-phẩm',component:ListProductComponent},
+ {path:'giỏ-hàng', component:CartComponent},
+ {path:'**',component:NotfoundComponent}
 ];
 
 @NgModule({

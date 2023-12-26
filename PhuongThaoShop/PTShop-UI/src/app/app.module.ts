@@ -11,16 +11,24 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from "@angular/material/checkbox";
 
 import { AppComponent } from './app.component';
-import { FooterComponent } from './main/dashboard/footer/footer.component';
-import { ListProductsComponent } from './main/dashboard/list-products/list-products.component';
-import { SignInComponent}  from './main/admin/sign-in/sign-in.component'
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { CartComponent } from './cart/cart.component';
+import { ListProductComponent } from './list-product/list-product.component';
+import { ProductComponent } from './product/product.component';
+import { NotfoundComponent } from './notfound/notfound.component'
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    NavbarComponent,
     FooterComponent,
-    ListProductsComponent,
-    SignInComponent
+    CartComponent,
+    ListProductComponent,
+    ProductComponent,
+    NotfoundComponent
   ],
   imports: [
     FormsModule,
