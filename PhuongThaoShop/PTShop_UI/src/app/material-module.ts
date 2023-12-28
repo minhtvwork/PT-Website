@@ -19,7 +19,8 @@ import {MatNativeDateModule} from "@angular/material/core"
 import {MatRadioModule} from "@angular/material/radio"
 import {MatCheckboxModule} from "@angular/material/checkbox"
 import {MatDialogModule} from "@angular/material/dialog"
-
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatStepperModule} from '@angular/material/stepper';
 @NgModule({
 exports:[
     MatInputModule,
@@ -41,7 +42,9 @@ exports:[
     MatNativeDateModule,
     MatRadioModule,
     MatCheckboxModule,
-    MatDialogModule
+    MatDialogModule,
+    MatGridListModule,
+    MatStepperModule
 ]
 })
 export class MaterialModule{}

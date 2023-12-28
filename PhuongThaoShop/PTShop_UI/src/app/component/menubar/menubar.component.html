@@ -33,7 +33,7 @@
     </mat-menu>
 
     <button routerLink="input" mat-button>Giới thiệu</button>
-    <button routerLink="autocomplete" mat-button>Giỏ hàng</button>
+    <button routerLink="cart" mat-button>Giỏ hàng</button>
     <a href="" mat-raised-button color="accent">Đăng nhập</a>
     <button (click)="badgevisibility()"  mat-icon-button>
         <mat-icon matBadgeColor="accent" matBadge="15" [matBadgeHidden]="badgevisible" matBadgeSize="small">notifications</mat-icon>
@@ -69,6 +69,8 @@
         <div style="text-align: center;min-height: 600px;">
 
             <router-outlet></router-outlet>
+          
             </div>
     </mat-drawer-content>
-</mat-drawer-container>
+</mat-drawer-container> 
+ <app-footer></app-footer>

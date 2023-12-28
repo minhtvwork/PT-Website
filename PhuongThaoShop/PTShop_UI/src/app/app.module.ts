@@ -17,6 +17,9 @@ import { FormdesignComponent } from './component/formdesign/formdesign.component
 import { PopupComponent } from './component/popup/popup.component';
 import { AssociateComponent } from './component/associate/associate.component';
 import { UserdetailComponent } from './component/userdetail/userdetail.component';
+import { FooterComponent } from './component/footer/footer.component';
+import { CartComponent } from './component/cart/cart.component';
+import { ListProductComponent } from './component/list-product/list-product.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { UserdetailComponent } from './component/userdetail/userdetail.component
     FormdesignComponent,
     PopupComponent,
     AssociateComponent,
-    UserdetailComponent
+    UserdetailComponent,
+    FooterComponent,
+    CartComponent,
+    ListProductComponent
   ],
   imports: [
     BrowserModule,
