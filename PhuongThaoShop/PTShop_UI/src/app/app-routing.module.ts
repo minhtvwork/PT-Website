@@ -1,19 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AutocompleteComponent } from './component/autocomplete/autocomplete.component';
-import { InputComponent } from './input/input.component';
-import { HomeComponent } from './component/home/home.component';
-import { CardComponent } from './component/card/card.component';
 import { TableComponent } from './component/table/table.component';
 import { FormdesignComponent } from './component/formdesign/formdesign.component';
 import { AssociateComponent } from './component/associate/associate.component';
-import { CartComponent } from './component/cart/cart.component';
+import { CartComponent } from './modules/public/component/cart/cart.component';
 
 const routes: Routes = [
-  {path:'',component:HomeComponent},
+  {path:'',loadChildren:()=> import('./modules/public/public.module').then((m) => m.PublicModule),},
   {path:'admin',loadChildren:()=> import('./modules/admin/admin.module').then((m) => m.AdminModule),},
-  {path:'input',component:InputComponent},
-  {path:'card',component:CardComponent},
   {path:'table',component:TableComponent},
   {path:'form',component:FormdesignComponent},
   {path:'associate',component:AssociateComponent},

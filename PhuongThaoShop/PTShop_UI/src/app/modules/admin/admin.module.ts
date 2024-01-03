@@ -6,12 +6,14 @@ import { AdminDashboardComponent } from './component/admin-dashboard/admin-dashb
 import { LoginComponent } from './component/login/login.component';
 import { MenubarComponent } from './component/menubar/menubar.component';
 import { MaterialModule } from '../../material-module';
+import { VoucherComponent } from './component/voucher/voucher.component';
 
 @NgModule({
   declarations: [
     AdminDashboardComponent,
     LoginComponent,
-    MenubarComponent
+    MenubarComponent,
+    VoucherComponent
   ],
   imports: [
     CommonModule,
