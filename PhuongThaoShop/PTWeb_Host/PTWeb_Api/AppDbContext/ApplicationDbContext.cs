@@ -25,16 +25,13 @@ namespace PTWeb_Api.AppDbContext
         public virtual DbSet<GiamGia> GiamGias { get; set; }
         public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<Serial> Serials { get; set; }
-        public virtual DbSet<LichSuTieuDiem> LichSuTieuDiems { get; set; }
         public virtual DbSet<Manufacturer> Manufacturers { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
         public virtual DbSet<ProductDetail> ProductDetails { get; set; }
-        public virtual DbSet<QuyDoiDiem> QuyDoiDiems { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<SanPhamGiamGia> SanPhamGiamGias { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<ViDiem> ViDiems { get; set; }
         public virtual DbSet<Voucher> Vouchers { get; set; }
         public virtual DbSet<ManagePost> ManagePosts { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
