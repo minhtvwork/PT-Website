@@ -17,8 +17,7 @@ namespace PTWeb_Models.Entities
         public string? Email { get; set; } 
         public Guid RoleId { get; set; }
         public int Status { get; set; }
-        public virtual Role? Users { get; set; }
-        public virtual ViDiem? ViDiem { get; set; }
+        public virtual Role? Role { get; set; }
         public virtual Cart? Cart { get; set; }
         public virtual ICollection<Bill>? Bills { get; set; }
 
