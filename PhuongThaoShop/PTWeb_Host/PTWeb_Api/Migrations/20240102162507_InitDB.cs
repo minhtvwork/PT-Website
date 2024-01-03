@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace PTWeb_Api.Migrations
 {
     /// <inheritdoc />
-    public partial class InitDb : Migration
+    public partial class InitDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -146,20 +146,6 @@ namespace PTWeb_Api.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ProductType", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "QuyDoiDiem",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    TienTichDiem = table.Column<double>(type: "float", nullable: false),
-                    TienTieuDiem = table.Column<double>(type: "float", nullable: false),
-                    TrangThai = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_QuyDoiDiem", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -386,27 +372,6 @@ namespace PTWeb_Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ViDiem",
-                columns: table => new
-                {
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    TongDiem = table.Column<double>(type: "float", nullable: false),
-                    SoDiemDaDung = table.Column<double>(type: "float", nullable: false),
-                    SoDiemDaCong = table.Column<double>(type: "float", nullable: false),
-                    TrangThai = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ViDiem", x => x.UserId);
-                    table.ForeignKey(
-                        name: "FK_ViDiem_User_UserId",
-                        column: x => x.UserId,
-                        principalTable: "User",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Image",
                 columns: table => new
                 {
@@ -506,35 +471,6 @@ namespace PTWeb_Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "LichSuTieuDiem",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    SoDiemDaDung = table.Column<double>(type: "float", nullable: false),
-                    NgaySD = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    SoDiemCong = table.Column<double>(type: "float", nullable: false),
-                    TrangThai = table.Column<int>(type: "int", nullable: false),
-                    QuyDoiDiemId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ViDiemId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_LichSuTieuDiem", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_LichSuTieuDiem_QuyDoiDiem_QuyDoiDiemId",
-                        column: x => x.QuyDoiDiemId,
-                        principalTable: "QuyDoiDiem",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_LichSuTieuDiem_ViDiem_ViDiemId",
-                        column: x => x.ViDiemId,
-                        principalTable: "ViDiem",
-                        principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Serial",
                 columns: table => new
                 {
@@ -588,16 +524,6 @@ namespace PTWeb_Api.Migrations
                 name: "IX_Image_ProductDetailId",
                 table: "Image",
                 column: "ProductDetailId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_LichSuTieuDiem_QuyDoiDiemId",
-                table: "LichSuTieuDiem",
-                column: "QuyDoiDiemId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_LichSuTieuDiem_ViDiemId",
-                table: "LichSuTieuDiem",
-                column: "ViDiemId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Product_ManufacturerId",
@@ -683,9 +609,6 @@ namespace PTWeb_Api.Migrations
                 name: "Image");
 
             migrationBuilder.DropTable(
-                name: "LichSuTieuDiem");
-
-            migrationBuilder.DropTable(
                 name: "ManagePost");
 
             migrationBuilder.DropTable(
@@ -696,12 +619,6 @@ namespace PTWeb_Api.Migrations
 
             migrationBuilder.DropTable(
                 name: "Cart");
-
-            migrationBuilder.DropTable(
-                name: "QuyDoiDiem");
-
-            migrationBuilder.DropTable(
-                name: "ViDiem");
 
             migrationBuilder.DropTable(
                 name: "GiamGia");

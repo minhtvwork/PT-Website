@@ -12,8 +12,8 @@ using PTWeb_Api.AppDbContext;
 namespace PTWeb_Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231224153109_InitDb")]
-    partial class InitDb
+    [Migration("20240102162507_InitDB")]
+    partial class InitDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -341,39 +341,6 @@ namespace PTWeb_Api.Migrations
                     b.ToTable("Image");
                 });
 
-            modelBuilder.Entity("PTWeb_Models.Entities.LichSuTieuDiem", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("NgaySD")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("QuyDoiDiemId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<double>("SoDiemCong")
-                        .HasColumnType("float");
-
-                    b.Property<double>("SoDiemDaDung")
-                        .HasColumnType("float");
-
-                    b.Property<int>("TrangThai")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("ViDiemId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("QuyDoiDiemId");
-
-                    b.HasIndex("ViDiemId");
-
-                    b.ToTable("LichSuTieuDiem");
-                });
-
             modelBuilder.Entity("PTWeb_Models.Entities.ManagePost", b =>
                 {
                     b.Property<Guid>("Id")
@@ -537,26 +504,6 @@ namespace PTWeb_Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ProductType");
-                });
-
-            modelBuilder.Entity("PTWeb_Models.Entities.QuyDoiDiem", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<double>("TienTichDiem")
-                        .HasColumnType("float");
-
-                    b.Property<double>("TienTieuDiem")
-                        .HasColumnType("float");
-
-                    b.Property<int>("TrangThai")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("QuyDoiDiem");
                 });
 
             modelBuilder.Entity("PTWeb_Models.Entities.Ram", b =>
@@ -724,28 +671,6 @@ namespace PTWeb_Api.Migrations
                     b.ToTable("User");
                 });
 
-            modelBuilder.Entity("PTWeb_Models.Entities.ViDiem", b =>
-                {
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<double>("SoDiemDaCong")
-                        .HasColumnType("float");
-
-                    b.Property<double>("SoDiemDaDung")
-                        .HasColumnType("float");
-
-                    b.Property<double>("TongDiem")
-                        .HasColumnType("float");
-
-                    b.Property<int>("TrangThai")
-                        .HasColumnType("int");
-
-                    b.HasKey("UserId");
-
-                    b.ToTable("ViDiem");
-                });
-
             modelBuilder.Entity("PTWeb_Models.Entities.Voucher", b =>
                 {
                     b.Property<Guid>("Id")
@@ -846,25 +771,6 @@ namespace PTWeb_Api.Migrations
                         .IsRequired();
 
                     b.Navigation("ProductDetail");
-                });
-
-            modelBuilder.Entity("PTWeb_Models.Entities.LichSuTieuDiem", b =>
-                {
-                    b.HasOne("PTWeb_Models.Entities.QuyDoiDiem", "QuyDoiDiem")
-                        .WithMany("LichSuTieuDiems")
-                        .HasForeignKey("QuyDoiDiemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PTWeb_Models.Entities.ViDiem", "ViDiem")
-                        .WithMany("LichSuTieuDiems")
-                        .HasForeignKey("ViDiemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("QuyDoiDiem");
-
-                    b.Navigation("ViDiem");
                 });
 
             modelBuilder.Entity("PTWeb_Models.Entities.Product", b =>
@@ -969,24 +875,13 @@ namespace PTWeb_Api.Migrations
 
             modelBuilder.Entity("PTWeb_Models.Entities.User", b =>
                 {
-                    b.HasOne("PTWeb_Models.Entities.Role", "Users")
+                    b.HasOne("PTWeb_Models.Entities.Role", "Role")
                         .WithMany("Bills")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Users");
-                });
-
-            modelBuilder.Entity("PTWeb_Models.Entities.ViDiem", b =>
-                {
-                    b.HasOne("PTWeb_Models.Entities.User", "User")
-                        .WithOne("ViDiem")
-                        .HasForeignKey("PTWeb_Models.Entities.ViDiem", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
+                    b.Navigation("Role");
                 });
 
             modelBuilder.Entity("PTWeb_Models.Entities.Bill", b =>
@@ -1053,11 +948,6 @@ namespace PTWeb_Api.Migrations
                     b.Navigation("Products");
                 });
 
-            modelBuilder.Entity("PTWeb_Models.Entities.QuyDoiDiem", b =>
-                {
-                    b.Navigation("LichSuTieuDiems");
-                });
-
             modelBuilder.Entity("PTWeb_Models.Entities.Ram", b =>
                 {
                     b.Navigation("ProductDetails");
@@ -1078,13 +968,6 @@ namespace PTWeb_Api.Migrations
                     b.Navigation("Bills");
 
                     b.Navigation("Cart");
-
-                    b.Navigation("ViDiem");
-                });
-
-            modelBuilder.Entity("PTWeb_Models.Entities.ViDiem", b =>
-                {
-                    b.Navigation("LichSuTieuDiems");
                 });
 
             modelBuilder.Entity("PTWeb_Models.Entities.Voucher", b =>
