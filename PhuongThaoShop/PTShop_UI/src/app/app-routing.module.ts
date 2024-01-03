@@ -11,7 +11,7 @@ import { CartComponent } from './component/cart/cart.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
-  {path:'autocomplete',component:AutocompleteComponent},
+  {path:'admin',loadChildren:()=> import('./modules/admin/admin.module').then((m) => m.AdminModule),},
   {path:'input',component:InputComponent},
   {path:'card',component:CardComponent},
   {path:'table',component:TableComponent},
