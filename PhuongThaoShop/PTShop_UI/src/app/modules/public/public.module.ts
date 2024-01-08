@@ -8,6 +8,9 @@ import { FooterComponent } from './component/footer/footer.component';
 import { MainComponent } from './component/main/main.component';
 import { CartComponent } from './component/cart/cart.component';
 import { MaterialModule } from 'src/app/material-module';
+import { AntDesignModule } from 'src/app/ant-design.module';
+import { LoginModalComponent } from './component/login-modal/login-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,15 @@ import { MaterialModule } from 'src/app/material-module';
     NavbarComponent,
     FooterComponent,
     MainComponent,
-    CartComponent
+    CartComponent,
+    LoginModalComponent
   ],
   imports: [
     CommonModule,
     PublicRoutingModule,
-    MaterialModule
+    ReactiveFormsModule,
+    MaterialModule,
+    AntDesignModule,
   ]
 })
 export class PublicModule { }

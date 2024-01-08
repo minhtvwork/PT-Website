@@ -48,7 +48,7 @@
 
             </li>
             <li>
-                <a routerLink="" mat-raised-button color="accent">Đăng nhập</a>
+                <a routerLink="" mat-raised-button color="accent" (click)="openLoginModal()" >Đăng nhập</a>
                 <button (click)="badgevisibility()" mat-icon-button>
                     <mat-icon matBadgeColor="accent" matBadge="15" [matBadgeHidden]="badgevisible"
                         matBadgeSize="small">notifications</mat-icon>

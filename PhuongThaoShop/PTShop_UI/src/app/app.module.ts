@@ -12,6 +12,9 @@ import { FormdesignComponent } from './component/formdesign/formdesign.component
 import { PopupComponent } from './component/popup/popup.component';
 import { AssociateComponent } from './component/associate/associate.component';
 import { UserdetailComponent } from './component/userdetail/userdetail.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,8 +32,9 @@ import { UserdetailComponent } from './component/userdetail/userdetail.component
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+
   ],
-  providers: [],
+ 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
